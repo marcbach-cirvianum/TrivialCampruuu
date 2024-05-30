@@ -1,0 +1,832 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="trivial.css">
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    #stage {
+		position: relative;
+    	width: 630px;
+		height: 800px;
+	}
+	.cell {
+		display: inline-block;
+        position: relative;
+        box-sizing: border-box;
+		/* position: absolute; */
+		width: 64px;
+		height: 64px;
+		border: 1px black solid;
+		cursor: pointer;     
+        text-align: center;
+	}
+
+    #dau {
+        width: 200px;
+        height: 200px;
+      
+    }
+    #SUBMAIN{
+       display: flex;
+       flex-wrap: wrap;
+       align-items: center;
+       
+    }
+    #MAIN{
+        display: flex;
+        padding: 60px;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        
+    }
+    #fletxa{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+
+    }
+    #dadu{
+        display: flex;
+        flex-direction: column;
+        margin-right: 100px;
+    }
+    #dadu button{
+        height: 50px;
+        background-color: black;
+        color: white;
+        border: 3px gray solid;
+    }
+    #buttons{
+        border: 5px black solid;
+        width: 400px;
+        height: 500px;
+        text-align: center;
+        padding: 5px;
+        margin-left: 70px;
+    }
+    #buttons button{
+        width: 80px;
+        height: 30px;
+    }
+    #colorbk{
+        background-color: grey;
+        color: white;
+        margin-bottom: 15px;
+        padding: 3px;
+    }
+    .quesitoazul{
+        height: 100px;
+        width: 100px;
+    }
+    #PaArriba{
+        visibility: hidden;
+        height: 300px;
+        width: 100px;
+    }
+    #butIz, #butDer{
+        visibility: visible;
+    }
+    #outputCat{
+        margin-right: 30px;
+    }
+    #output{
+        margin-bottom: 50px;
+    }
+   
+</style>
+<body>
+    <div id="MAIN">
+        <div id="SUBMAIN">
+            <div id="dadu">
+            <img src="1.jpeg" alt="" id="dau">
+            
+            </div>
+            <div id="stage">
+                <div class="cell"  id="cosa0"></div>
+                <div class="cell"  id="cosa1"></div>
+                <div class="cell"  id="cosa2"></div>
+                <div class="cell"  id="cosa3"></div>
+                <div class="cell"  id="cosa4" id="perma1"></div>
+                <div class="cell"  id="cosa5"></div>
+                <div class="cell"  id="cosa6"></div>
+                <div class="cell"  id="cosa7"></div>
+                <div class="cell"  id="cosa8"></div>
+                <div class="cell"  id="cosa31"></div>
+
+                <div class="cell" id="rel32"></div>
+                <div class="cell" id="rel33"></div>
+                <div class="cell" id="rel34"></div>
+                <div class="cell" id="perma35"></div>
+                <div class="cell" id="rel36"></div>
+                <div class="cell" id="rel37"></div>
+                <div class="cell" id="rel38"></div>
+                
+                <div class="cell"  id="cosa9"></div>
+                <div class="cell"  id="cosa30"></div>
+
+                <div class="cell" id="rel39"></div>
+                <div class="cell" id="rel40"></div>
+                <div class="cell" id="rel41"></div>
+                <div class="cell" id="perma42"></div>
+                <div class="cell" id="rel43"></div>
+                <div class="cell" id="rel44"></div>
+                <div class="cell" id="rel45"></div>
+                
+                <div class="cell"  id="cosa10"></div>
+                <div class="cell"  id="cosa29"></div>
+
+                <div class="cell" id="rel46"></div>
+                <div class="cell" id="rel47"></div>
+                <div class="cell" id="rel48"></div>
+                <div class="cell" id="perma49"></div>
+                <div class="cell" id="rel50"></div>
+                <div class="cell" id="rel51"></div>
+                <div class="cell" id="rel52"></div>
+
+                <div class="cell"  id="cosa11"></div>
+                <div class="cell"  id="cosa28" id="esp28"></div>
+
+                <div class="cell" id="perma53"></div>
+                <div class="cell" id="perma54"></div>
+                <div class="cell" id="perma55"></div>
+                <div class="cell" id="perma56"></div>
+                <div class="cell" id="perma57"></div>
+                <div class="cell" id="perma58"></div>
+                <div class="cell" id="perma59"></div>
+                
+                <div class="cell"  id="cosa12" id="esp12"></div>
+                <div class="cell"  id="cosa27"></div>
+                
+                <div class="cell" id="rel60"></div>
+                <div class="cell" id="rel61"></div>
+                <div class="cell" id="rel62"></div>
+                <div class="cell" id="perma63"></div>
+                <div class="cell" id="rel64"></div>
+                <div class="cell" id="rel65"></div>
+                <div class="cell" id="rel66"></div>
+                
+                <div class="cell"  id="cosa13"></div>
+                <div class="cell"  id="cosa26"></div>
+                
+                <div class="cell"id="rel67"></div>
+                <div class="cell"id="rel68"></div>
+                <div class="cell"id="rel69"></div>
+                <div class="cell" id="perma70"></div>
+                <div class="cell"id="rel71"></div>
+                <div class="cell"id="rel72"></div>
+                <div class="cell"id="rel73"></div>
+                
+                <div class="cell"  id="cosa14"></div>
+                <div class="cell"  id="cosa25"></div>
+
+                <div class="cell" id="rel74"></div>
+                <div class="cell" id="rel75"></div>
+                <div class="cell" id="rel76"></div>
+                <div class="cell" id="perma77"></div>
+                <div class="cell" id="rel78"></div>
+                <div class="cell" id="rel79"></div>
+                <div class="cell" id="rel80"></div>
+
+                <div class="cell"  id="cosa15"></div>
+                <div class="cell"  id="cosa24"></div>
+                
+                <div class="cell"  id="cosa23"></div>
+                <div class="cell"  id="cosa22"></div>
+                <div class="cell"  id="cosa21"></div>
+                <div class="cell"  id="cosa20" id="esp20"></div>
+                <div class="cell"  id="cosa19"></div>
+                <div class="cell"  id="cosa18"></div>
+                <div class="cell"  id="cosa17"></div>
+                
+                <div class="cell"  id="cosa16"></div>
+        </div>
+        <div id="buttons">
+            <div id="colorbk">
+            <h1 id="Pregunta">Pregunta</h1>
+            </div>
+            <button id="TRUE" onclick="funcioResposta(true)">TRUE</button>
+            <button id="FALSE" onclick="funcioResposta(false)">FALSE</button>
+            <p id="output">Trivial</p>
+            </div>
+        
+        </div>
+        <div id="fletxa">
+            <img src="esquerra.jpg" alt="" onclick="moverFichaIz()" id="butIz">
+            <img src="dreta.jpg" alt="" onclick="moverFichaDer()" id="butDre">
+            <img src="paArriba.jpg" onclick="moverPaArriba()" id="PaArriba">
+
+            <p id="outputCat">Trivial</p>
+
+            <div id="divquesito">
+            <h1 id="outputQue">Quantitat de Quesitos</h1>
+            
+            </div>
+            
+        </div>
+</div>
+
+        <script>
+            var topList = ["cosa4","perma35","perma42","perma49","perma56"];
+            var botList = ["cosa20","perma77","perma70","perma63","perma56"];
+            var rightList = ["cosa12","perma59","perma58","perma57","perma56"];
+            var leftList = ["cosa28","perma53","perma54","perma55","perma56"];
+
+            var winPath = 0;
+            var winPathPos = 0;
+            var tauler = 
+            [4 ,3 ,2 ,1, 5 ,4 ,3 ,2, 1, 4, 3, 2, 6, 3, 2, 1, 3, 4 ,1 ,2 ,7 ,4 ,1 ,2 ,3 ,4 ,1 ,2 ,8 ,4 ,1 ,2 ,9 ,9 ,9 ,  19   , 9, 9, 9, 9, 9, 9,  20  , 9, 9, 9, 9, 9, 9,     21   , 9, 9, 9, 10, 11, 12,     22   , 15, 14, 13, 9, 9, 9,   18   , 9, 9, 9, 9, 9, 9,     17   , 9, 9, 9, 9, 9, 9,     16   , 9, 9 ,9 ];
+            
+            var posicioFicha = 0;
+            var ficha = "O";
+            var posicioFicha2 = "cosa" + posicioFicha;
+            var output = document.getElementById("output").innerHTML;
+            document.getElementById("cosa" + posicioFicha).style.borderRadius =  "50%";
+
+            var QUESITOS = [0,0,0,0];
+            var FINAL = [0,0,0]
+            var Final2 = 0;
+
+            var textbar = document.getElementById("resposta");
+            var butIz = document.getElementById("butIz");
+            var butDre = document.getElementById("butDre");
+            var butAlan = document.getElementById("PaArriba");
+            var TRUE = document.getElementById("TRUE");
+            var FALSE = document.getElementById("FALSE");
+            var divquesito = document.getElementById("divquesito");
+            for (var i = 0; i < 5; i++)
+            {
+                if (i == 0){
+                    document.getElementById(topList[i]).style.backgroundImage = "url('quesitoazul.jpeg')";
+                    document.getElementById(botList[i]).style.backgroundImage = "url('ficha1.jpeg')";
+                    document.getElementById(rightList[i]).style.backgroundImage = "url('quesitorojo.png')";
+                    document.getElementById(leftList[i]).style.backgroundImage = "url('quesitonaranja.png')";
+
+                }
+                if (i == 1){
+                    document.getElementById(topList[i]).style.backgroundColor = "blue"
+                    document.getElementById(botList[i]).style.backgroundColor = "purple"
+                    document.getElementById(rightList[i]).style.backgroundColor = "red"
+                    document.getElementById(leftList[i]).style.backgroundColor = "orange"
+
+                }
+                if (i == 2){
+                    document.getElementById(topList[i]).style.backgroundColor = "blue"
+                    document.getElementById(botList[i]).style.backgroundColor = "purple"
+                    document.getElementById(rightList[i]).style.backgroundColor = "red"
+                    document.getElementById(leftList[i]).style.backgroundColor = "orange"
+                }
+                if (i == 3){
+                    document.getElementById(topList[i]).style.backgroundColor = "blue"
+                    document.getElementById(botList[i]).style.backgroundColor = "purple"
+                    document.getElementById(rightList[i]).style.backgroundColor = "red"
+                    document.getElementById(leftList[i]).style.backgroundColor = "orange"
+                }
+            } 
+            for (var i = 0; i < tauler.length; i++)
+            {
+                console.log(i)
+                var idCela = "cosa" + i;
+                var relleno = "rel" + i;
+                var perma = "perma" + i;
+                console.log(perma)
+
+        
+                if (tauler[i] === 1) {
+                    document.getElementById(idCela).style.backgroundColor = "red"
+                }
+                if (tauler[i] === 2) {
+                    document.getElementById(idCela).style.backgroundColor = "orange"
+                }
+                if (tauler[i] === 3) {
+                    document.getElementById(idCela).style.backgroundColor = "purple"
+                }
+                if (tauler[i] === 4) {
+                    document.getElementById(idCela).style.backgroundColor = "blue"
+                }
+                
+            }
+        
+
+
+            var resposta;
+            var preguntesG = []
+                    preguntesG[0] = "¿El río Amazonas es el río más largo del mundo?"
+                    preguntesG[1] = "¿El desierto del Sahara es el desierto más grande del mundo?"
+                    preguntesG[2] = "¿El Everest es la montaña más alta del mundo?"
+                    preguntesG[3] = "¿La Gran Muralla China es visible desde el espacio?"
+                    preguntesG[4] = "¿La ciudad de Roma es la capital de Italia?"
+                    preguntesG[5] = "¿El Polo Norte está ubicado en tierra firme?"
+                    preguntesG[6] = "¿Australia es el país más grande del mundo?"
+                    preguntesG[7] = "¿El canal de Panamá conecta el océano Atlántico con el océano Índico?"
+                    preguntesG[8] = "¿El lago Baikal es el lago más profundo del mundo?"
+                    preguntesG[9] = "¿La línea del ecuador divide la Tierra en dos hemisferios: norte y sur?"
+
+            var respostesG = []
+                    respostesG[0] = true;
+                    respostesG[1] = true;
+                    respostesG[2] = true;
+                    respostesG[3] = false;
+                    respostesG[4] = true;
+                    respostesG[5] = false;
+                    respostesG[6] = false;
+                    respostesG[7] = false;
+                    respostesG[8] = true;
+                    respostesG[9] = true;
+
+            var preguntesA = []
+                    preguntesA[0] = "¿La Mona Lisa fue pintada por Leonardo da Vinci?"
+                    preguntesA[1] = "¿La Capilla Sixtina se encuentra en el Vaticano?"
+                    preguntesA[2] = "¿El cuadro La Noche Estrellada fue pintado por Vincent van Gogh?"
+                    preguntesA[3] = "¿El Renacimiento fue un período artístico que ocurrió en la Edad Media?"
+                    preguntesA[4] = "¿El Guernica es una obra de Pablo Picasso que representa el bombardeo de la ciudad española de Guernica durante la Guerra Civil Española?"
+                    preguntesA[5] = "¿La escultura El Pensador fue creada por Auguste Rodin?"
+                    preguntesA[6] = "¿La Torre Eiffel es una obra del arquitecto español Antoni Gaudí?"
+                    preguntesA[7] = "¿El Surrealismo es un movimiento artístico que se caracteriza por representar el mundo de los sueños y el subconsciente?"
+                    preguntesA[8] = "¿El David de Miguel Ángel es una escultura renacentista que representa al rey David bíblico?"
+                    preguntesA[9] = "¿El arte rupestre se refiere a las manifestaciones artísticas realizadas en cuevas y abrigos rocosos durante la prehistoria?"
+
+            var respostesA = []
+                    respostesA[0] = true;
+                    respostesA[1] = true;
+                    respostesA[2] = true;
+                    respostesA[3] = false;
+                    respostesA[4] = true;
+                    respostesA[5] = true;
+                    respostesA[6] = false;
+                    respostesA[7] = true;
+                    respostesA[8] = true;
+                    respostesA[9] = true;
+
+            var preguntesE = []
+                    preguntesE[0] = "¿El fútbol americano se juega con un balón ovalado?"
+                    preguntesE[1] = "¿Roger Federer es un jugador de tenis suizo?"
+                    preguntesE[2] = "¿El Tour de Francia es una competición de ciclismo?"
+                    preguntesE[3] = "¿El baloncesto se juega con un balón redondo?"
+                    preguntesE[4] = "¿El golf se juega en un campo con 9 hoyos?"
+                    preguntesE[5] = "¿El Gran Premio de Mónaco es una carrera de Fórmula 1?"
+                    preguntesE[6] = "¿El boxeo es un deporte de combate en el que los contendientes luchan con los puños?"
+                    preguntesE[7] = "¿El voleibol se juega con un balón que se golpea con las manos sobre una red?"
+                    preguntesE[8] = "¿La Copa del Mundo de Rugby es un torneo que se celebra cada cuatro años?"
+                    preguntesE[9] = "¿El cricket es un deporte que se juega principalmente en América del Norte?"
+            
+            var respostesE = []
+                    respostesE[0] = true;
+                    respostesE[1] = true;
+                    respostesE[2] = true;
+                    respostesE[3] = true;
+                    respostesE[4] = false;
+                    respostesE[5] = true;
+                    respostesE[6] = true;
+                    respostesE[7] = true;
+                    respostesE[8] = true;
+                    respostesE[9] = false;
+
+            var preguntesC = []
+                    preguntesC[0] = "¿El ADN es una molécula que contiene la información genética de los organismos?"
+                    preguntesC[1] = "¿La Tierra orbita alrededor del Sol?"
+                    preguntesC[2] = "¿El agua hierve a una temperatura de 100 grados Celsius a nivel del mar?"
+                    preguntesC[3] = "¿Los mamíferos son animales de sangre fría?"
+                    preguntesC[4] = "¿El átomo es la unidad más pequeña de un elemento químico que aún mantiene las propiedades de ese elemento?"
+                    preguntesC[5] = "¿La energía solar se produce mediante la fusión nuclear en el núcleo del Sol?"
+                    preguntesC[6] = "¿La ley de la gravitación universal fue formulada por Isaac Newton?"
+                    preguntesC[7] = "¿El oxígeno es el gas más abundante en la atmósfera terrestre?"
+                    preguntesC[8] = "¿La teoría de la relatividad fue desarrollada por Albert Einstein?"
+                    preguntesC[9] = "¿La Luna no tiene atmósfera?"
+
+            var respostesC = []
+                    respostesC[0] = true;
+                    respostesC[1] = true;
+                    respostesC[2] = true;
+                    respostesC[3] = false;
+                    respostesC[4] = true;
+                    respostesC[5] = true;
+                    respostesC[6] = true;
+                    respostesC[7] = false;
+                    respostesC[8] = true;
+                    respostesC[9] = true;
+
+
+            function funcioFoto(number){
+                
+                var images = [];
+                images[0] = "1.jpeg";
+                images[1] = "2.png";
+                images[2] = "3.png";
+                images[3] = "4.png";
+                images[4] = "5.png";
+                images[5] = "6.png";
+
+                var image = document.querySelector("#dau");
+                image.src = images[number];
+                return(number);
+
+            }
+
+            function comprovarTema(){
+                console.log("posfitxa " +posicioFicha)
+                console.log("tauler " + tauler[posicioFicha])
+                if(tauler[posicioFicha] == 4 && 5){
+                    document.getElementById("outputCat").innerHTML = "Categoria: geografia";
+                }
+                if (tauler[posicioFicha] == 1 ){
+                    document.getElementById("outputCat").innerHTML = "Categoria: art";
+                }
+                if (tauler[posicioFicha] == 2){
+                    document.getElementById("outputCat").innerHTML = "Categoria: esports";
+                }
+                if (tauler[posicioFicha] == 3){
+                    document.getElementById("outputCat").innerHTML = "Categoria: ciencia";
+                }
+                if(tauler[posicioFicha] == 5){
+                    document.getElementById("outputCat").innerHTML = "Categoria geografia";
+                }
+                if(tauler[posicioFicha] == 6){
+                    document.getElementById("outputCat").innerHTML = "Categoria art";
+                }
+                if(tauler[posicioFicha] == 7){
+                    document.getElementById("outputCat").innerHTML = "Categoria ciencia";
+                }
+                if(tauler[posicioFicha] == 8){
+                    document.getElementById("outputCat").innerHTML = "Categoria esports";
+                }
+            }
+
+            function moverFichaDer(){
+                    
+                    var number = Math.floor(Math.random()*6);
+                    document.getElementById("cosa" +posicioFicha).style.border = "1px black solid";
+                    document.getElementById("cosa" + posicioFicha).style.borderRadius =  "0%";
+                    posicioFicha = posicioFicha + number +1;
+                    
+                    
+                    if(posicioFicha >= 32){
+                        
+                        posicioFicha = posicioFicha -32;
+                        
+                    }
+                        document.getElementById("cosa" + posicioFicha).style.borderRadius =  "50%";
+                    FALSE.disabled = false;
+                    TRUE.disabled = false;
+                    butDre.style.visibility = "hidden";
+                    butIz.style.visibility = "hidden";
+                    comprovarTema();
+                    funcioFoto(number);
+                    funcioGeneraP();
+                        
+                }
+
+            function moverFichaIz(){
+                        var number = Math.floor(Math.random()*6);
+                        document.getElementById("cosa" +posicioFicha).style.border = "1px black solid";
+                        document.getElementById("cosa" + posicioFicha).style.borderRadius =  "0%";
+                        posicioFicha = posicioFicha - (number +1);
+                        
+                        
+                        if(posicioFicha < 0){
+                            
+                            posicioFicha = posicioFicha +32;
+                            
+                        }
+                        console.log(posicioFicha);
+                    
+                    document.getElementById("cosa" + posicioFicha).style.borderRadius =  "50%";
+                    butDre.style.visibility = "hidden";
+                    butIz.style.visibility = "hidden";
+                    FALSE.disabled = false;
+                    TRUE.disabled = false;
+
+                    funcioFoto(number);
+                    comprovarTema();
+                    funcioGeneraP();        
+                 }
+
+                 function funcioGeneraP(){
+                    var Pregunta = document.getElementById("Pregunta")
+                    var index = Math.floor(Math.random()*10);
+
+                    if(tauler[posicioFicha] == 4 ){
+                        Pregunta.innerHTML = preguntesG[index]
+                        resposta = respostesG[index];
+                        document.getElementById("colorbk").style = "background-color: blue"
+                    }
+                    if(tauler[posicioFicha] == 1 ){
+                        Pregunta.innerHTML = preguntesA[index]
+                        resposta = respostesA[index];
+                        document.getElementById("colorbk").style = "background-color: red"
+                    }
+                    if(tauler[posicioFicha] == 2 ){
+                        Pregunta.innerHTML = preguntesE[index]
+                        resposta = respostesE[index];
+                        document.getElementById("colorbk").style = "background-color: orange"
+                    }
+                    if(tauler[posicioFicha] == 3 ){
+                        Pregunta.innerHTML = preguntesC[index]
+                        resposta = respostesC[index];
+                        document.getElementById("colorbk").style = "background-color: blueviolet"
+                    }
+                    if(tauler[posicioFicha] == 5 ){
+                        Pregunta.innerHTML = preguntesG[index]
+                        resposta = respostesG[index];
+                        document.getElementById("colorbk").style = "background-color: blue"
+                    }
+                    if(tauler[posicioFicha] == 6 ){
+                        Pregunta.innerHTML = preguntesA[index]
+                        resposta = respostesA[index];
+                        document.getElementById("colorbk").style = "background-color: red"
+                    }
+                    if(tauler[posicioFicha] == 8 ){
+                        Pregunta.innerHTML = preguntesE[index]
+                        resposta = respostesE[index];
+                        document.getElementById("colorbk").style = "background-color: orange"
+                    }
+                    if(tauler[posicioFicha] == 7 ){
+                        Pregunta.innerHTML = preguntesC[index]
+                        resposta = respostesC[index];
+                        document.getElementById("colorbk").style = "background-color: blueviolet"
+                    }
+                }
+
+            function funcioResposta(Correcte){
+                console.log(Correcte)
+                console.log(resposta) 
+                if (Correcte == resposta){
+                    document.getElementById("output").innerHTML = "Has encertat"
+                }else{
+                    document.getElementById("output").innerHTML = "Has fallat"
+                }
+
+                if(tauler[posicioFicha] === 5 && document.getElementById("output").innerHTML == "Has encertat"){
+                    if (QUESITOS[0] != 1){
+                    var quesitoazul = document.createElement("img");
+                    quesitoazul.src = "quesitoazul.jpeg";
+                    quesitoazul.setAttribute("class", "quesitoazul")
+                    divquesito.appendChild(quesitoazul);
+
+                    QUESITOS[0] = 1;
+                    console.log(QUESITOS)
+                    }
+                  
+                }
+                if(tauler[posicioFicha] === 6 && document.getElementById("output").innerHTML == "Has encertat"){
+                    if (QUESITOS[1] != 1){
+                    var quesitorojo = document.createElement("img");
+                    quesitorojo.src = "quesitorojo.png";
+                    quesitorojo.setAttribute("class", "quesitoazul")
+                    divquesito.appendChild(quesitorojo);
+
+                    QUESITOS[1] = 1;
+                    }
+                   
+                }
+                if(tauler[posicioFicha] === 7 && document.getElementById("output").innerHTML == "Has encertat"){
+                    if (QUESITOS[2] != 1){
+                    var quesitomor = document.createElement("img");
+                    quesitomor.src = "ficha1.jpeg";
+                    quesitomor.setAttribute("class", "quesitoazul")
+                    divquesito.appendChild(quesitomor);
+
+                    QUESITOS[2] = 1;
+                    }
+                }
+                if(tauler[posicioFicha] === 8 && document.getElementById("output").innerHTML == "Has encertat"){
+                    if (QUESITOS[3] != 1){
+                    var quesitonaranja = document.createElement("img");
+                    quesitonaranja.src = "quesitonaranja.png";
+                    quesitonaranja.setAttribute("class", "quesitoazul")
+                    divquesito.appendChild(quesitonaranja);
+
+                    QUESITOS[3] = 1;
+                    }
+                    
+                }
+
+                if(document.getElementById("output").innerHTML == "Has encertat" || document.getElementById("output").innerHTML == "Has fallat"){
+                    TRUE.disabled = true;
+                    FALSE.disabled = true;
+                    butDre.style.visibility = "visible";
+                    butIz.style.visibility = "visible";
+                }
+
+                funcioFinal();
+            }
+
+            function moverPaArriba(){
+                if(posicioFicha === 4){
+                    winPath = "top"
+                }     
+                if (winPath == "top")
+                {   number = Math.floor(Math.random()*6);
+                    
+                    document.getElementById(topList[winPathPos]).style.borderRadius =  "0%";
+                    winPathPos += number +1;
+                    
+
+                    if(winPathPos > 4){
+                        var newnumber = winPathPos -4;
+                        var newnumber2 = 4 - newnumber;
+                        winPathPos = newnumber2;
+
+                        console.log("winpos: " + winPathPos)
+
+
+                        if(winPathPos <0){
+                            winPathPos = 0;
+                        }
+                    }
+                    document.getElementById(topList[winPathPos]).style.borderRadius = "50%";
+                    funcioFoto(number);
+                    funcioGeneraP();
+                }
+                
+                if(posicioFicha === 12){
+                    winPath = "right"
+                }    
+                if (winPath == "right")
+                {  number = Math.floor(Math.random()*6);
+                    
+                    document.getElementById(rightList[winPathPos]).style.borderRadius =  "0%";
+                    winPathPos += number +1;
+                    
+
+                    if(winPathPos > 4){
+                        var newnumber = winPathPos -4;
+                        var newnumber2 = 4 - newnumber;
+                        winPathPos = newnumber2;
+
+                        console.log("winpos: " + winPathPos)
+
+
+                        if(winPathPos <0){
+                            winPathPos = 0;
+                        }
+                    }
+                    document.getElementById(rightList[winPathPos]).style.borderRadius = "50%";
+                    funcioFoto(number);
+                    funcioGeneraP();
+                }
+
+                if(posicioFicha === 20){
+                    winPath = "bot"
+                }     
+                if (winPath == "bot")
+                {   number = Math.floor(Math.random()*6);
+                    
+                    document.getElementById(botList[winPathPos]).style.borderRadius =  "0%";
+                    winPathPos += number +1;
+                    
+
+                    if(winPathPos > 4){
+                        var newnumber = winPathPos -4;
+                        var newnumber2 = 4 - newnumber;
+                        winPathPos = newnumber2;
+
+                        console.log("winpos: " + winPathPos)
+
+
+                        if(winPathPos <0){
+                            winPathPos = 0;
+                        }
+                    }
+                    document.getElementById(botList[winPathPos]).style.borderRadius = "50%";
+                    funcioFoto(number);
+                    funcioGeneraP();
+                }
+                if(posicioFicha === 28){
+                    winPath = "left"
+                }
+
+                if (winPath == "left")
+                {   number = Math.floor(Math.random()*6);
+                    
+                    document.getElementById(leftList[winPathPos]).style.borderRadius =  "0%";
+                    winPathPos += number +1;
+                    
+
+                    if(winPathPos > 4){
+                        var newnumber = winPathPos -4;
+                        var newnumber2 = 4 - newnumber;
+                        winPathPos = newnumber2;
+
+                        console.log("winpos: " + winPathPos)
+
+
+                        if(winPathPos <0){
+                            winPathPos = 0;
+                        }
+                    }
+                    document.getElementById(leftList[winPathPos]).style.borderRadius = "50%";
+                    funcioFoto(number);
+                    funcioGeneraP();
+
+                }
+                FALSE.disabled = false;
+                TRUE.disabled = false;
+                    
+            }
+
+            function funcioFinal(Correcte){
+            if( QUESITOS[3] == 1 /*&& QUESITOS[1] == 1 && QUESITOS[2] == 1 && QUESITOS[3] == 1*/){
+
+                    document.getElementById("PaArriba").style.visibility = "visible";
+                    document.getElementById("butIz").style.visibility = "hidden";
+                    document.getElementById("butDre").style.visibility = "hidden";
+                    // TRUE.disabled = false;
+                    // FALSE.disabled = false;
+                }
+
+            if([winPathPos] == 4){
+                    var Pregunta = document.getElementById("Pregunta")
+                    var index = Math.floor(Math.random()*10);
+
+                    TRUE.disabled = false;
+                    FALSE.disabled = false;
+
+                    
+
+                    Pregunta.innerHTML = preguntesE[index];
+                    resposta = respostesE[index];
+
+                    console.log(Correcte);
+                    console.log(resposta);
+
+
+                    if(document.getElementById("output").innerHTML == "Has encertat" && Final2 == 0){
+                        Pregunta.innerHTML = preguntesA[index];
+                        resposta = respostesA[index];
+                        
+                        
+
+                        if(document.getElementById("output").innerHTML == "Has encertat"){
+                        Final2 = 1;
+                        document.getElementById("colorbk").style.backgroundColor = "red";
+                        
+                        }
+                    }
+
+
+                    else if(document.getElementById("output").innerHTML == "Has encertat" && Final2 == 1){
+                        Pregunta.innerHTML = preguntesC[index]
+                        resposta = respostesC[index];
+                        if(document.getElementById("output").innerHTML == "Has encertat"){
+                            Final2 = 2;
+                            document.getElementById("colorbk").style.backgroundColor = "purple";
+                            
+
+                        }
+                        
+                    }
+
+                    else if(document.getElementById("output").innerHTML == "Has encertat" && Final2 == 2){
+                        Pregunta.innerHTML = preguntesG[index]
+                        resposta = respostesG[index];
+                        if(document.getElementById("output").innerHTML == "Has encertat"){
+                            Final2 = 3;
+                            document.getElementById("colorbk").style.backgroundColor = "blue";
+                            
+
+                        }
+                    }
+                    
+                    else if(document.getElementById("output").innerHTML == "Has encertat" && Final2 == 3){
+                        Pregunta.innerHTML = preguntesG[index]
+                        resposta = respostesG[index];
+                        if(document.getElementById("output").innerHTML == "Has encertat"){
+                            Final2 = 4;
+                            document.getElementById("colorbk").style.backgroundColor = "blue";
+                        }
+                    }
+
+                    if(document.getElementById("output").innerHTML == "Has fallat"){
+                        FALSE.disabled = true;
+                        TRUE.disabled = true;
+                        Pregunta.innerHTML = "Has fallat, torna enrera";
+                        Final2 = 0;
+                        
+                        }
+                    
+                    if(Final2 == 4){
+                        FALSE.disabled = true;
+                        TRUE.disabled = true;
+                        Pregunta.innerHTML = "Enhorabona has guanyat";
+                        
+                    }
+
+                    
+                    
+                
+
+                }
+            }
+            
+        </script>
+</body>
+</html>
+
